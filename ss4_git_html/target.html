@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thuộc tính Target trong HTML</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #333;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .content {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .examples {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .examples h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #3498db;
+    }
+
+    .example-item {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+
+    .example-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .example-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .example-title .icon {
+      font-size: 1.5rem;
+      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: white;
+    }
+
+    .example-item h3 {
+      font-size: 1.2rem;
+    }
+
+    .example-item p {
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .example-item a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .example-item a:hover {
+      background: #2980b9;
+    }
+
+    .visualization {
+      background: #2c3e50;
+      color: white;
+      padding: 25px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .visualization h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #3498db;
+    }
+
+    .browser-visual {
+      position: relative;
+      height: 300px;
+      background: #1a2530;
+      border-radius: 10px;
+      padding: 15px;
+      overflow: hidden;
+    }
+
+    .browser-window {
+      position: absolute;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.5s ease;
+    }
+
+    .browser-header {
+      height: 30px;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+    }
+
+    .browser-buttons {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .browser-button.red { background: #ff5f56; }
+    .browser-button.yellow { background: #ffbd2e; }
+    .browser-button.green { background: #27c93f; }
+
+    .browser-content {
+      height: calc(100% - 30px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .main-window {
+      width: 70%;
+      height: 70%;
+      left: 15%;
+      top: 15%;
+      z-index: 10;
+    }
+
+    .blank-window {
+      width: 60%;
+      height: 60%;
+      left: 35%;
+      top: 5%;
+      z-index: 20;
+    }
+
+    .parent-window {
+      width: 50%;
+      height: 50%;
+      left: 5%;
+      top: 5%;
+      z-index: 5;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #f8f9fa;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Thuộc tính TARGET trong HTML</h1>
+    <p class="subtitle">Điều khiển cách mở liên kết trong trình duyệt</p>
+  </header>
+
+  <div class="content">
+    <div class="examples">
+      <h2>Các giá trị của thuộc tính target</h2>
+
+      <div class="example-item">
+        <div class="example-title">
+          <div class="icon" style="background-color: #e74c3c;">_B</div>
+          <h3>target="_blank"</h3>
+        </div>
+        <p>Mở liên kết trong một tab hoặc cửa sổ mới.</p>
+        <a href="https://www.google.com" target="_blank">Mở Google trong tab mới</a>
+      </div>
+
+      <div class="example-item">
+        <div class="example-title">
+          <div class="icon" style="background-color: #2ecc71;">_S</div>
+          <h3>target="_self"</h3>
+        </div>
+        <p>Mở liên kết trong khung hiện tại (đây là hành vi mặc định).</p>
+        <a href="https://www.example.com" target="_self">Mở trong tab hiện tại</a>
+      </div>
+
+      <div class="example-item">
+        <div class="example-title">
+          <div class="icon" style="background-color: #3498db;">_P</div>
+          <h3>target="_parent"</h3>
+        </div>
+        <p>Mở liên kết trong khung cha (nếu có nhiều khung lồng nhau).</p>
+        <a href="https://www.example.com" target="_parent">Mở trong khung cha</a>
+      </div>
+
+      <div class="example-item">
+        <div class="example-title">
+          <div class="icon" style="background-color: #f39c12;">_T</div>
+          <h3>target="_top"</h3>
+        </div>
+        <p>Mở liên kết trong toàn bộ cửa sổ trình duyệt, thoát khỏi tất cả các khung.</p>
+        <a href="https://www.example.com" target="_top">Mở toàn bộ cửa sổ</a>
+      </div>
+
+      <div class="example-item">
+        <div class="example-title">
+          <div class="icon" style="background-color: #9b59b6;">F</div>
+          <h3>target="tên_khung"</h3>
+        </div>
+        <p>Mở liên kết trong một khung có tên cụ thể.</p>
+        <a href="https://www.example.com" target="myFrame">Mở trong khung "myFrame"</a>
+      </div>
+    </div>
+
+    <div class="visualization">
+      <h2>Mô phỏng trực quan</h2>
+      <div class="browser-visual">
+        <div class="browser-window main-window">
+          <div class="browser-header">
+            <div class="browser-buttons">
+              <div class="browser-button red"></div>
+              <div class="browser-button yellow"></div>
+              <div class="browser-button green"></div>
+            </div>
+          </div>
+          <div class="browser-content">Cửa sổ hiện tại (_self)</div>
+        </div>
+
+        <div class="browser-window blank-window">
+          <div class="browser-header">
+            <div class="browser-buttons">
+              <div class="browser-button red"></div>
+              <div class="browser-button yellow"></div>
+              <div class="browser-button green"></div>
+            </div>
+          </div>
+          <div class="browser-content">Tab mới (_blank)</div>
+        </div>
+
+        <div class="browser-window parent-window">
+          <div class="browser-header">
+            <div class="browser-buttons">
+              <div class="browser-button red"></div>
+              <div class="browser-button yellow"></div>
+              <div class="browser-button green"></div>
+            </div>
+          </div>
+          <div class="browser-content">Khung cha (_parent)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Di chuột qua các nút để xem hiệu ứng • Thuộc tính target rất hữu ích để kiểm soát trải nghiệm người dùng</p>
+  </div>
+</div>
+
+<script>
+  // Thêm hiệu ứng cho các cửa sổ trình duyệt khi di chuột vào các liên kết
+  const exampleItems = document.querySelectorAll('.example-item');
+
+  exampleItems.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      const targetType = this.querySelector('h3').textContent;
+
+      if (targetType.includes('_blank')) {
+        document.querySelector('.blank-window').style.transform = 'scale(1.1)';
+        document.querySelector('.blank-window').style.boxShadow = '0 0 20px rgba(231, 76, 60, 0.8)';
+      } else if (targetType.includes('_self')) {
+        document.querySelector('.main-window').style.transform = 'scale(1.05)';
+        document.querySelector('.main-window').style.boxShadow = '0 0 20px rgba(46, 204, 113, 0.8)';
+      } else if (targetType.includes('_parent')) {
+        document.querySelector('.parent-window').style.transform = 'scale(1.1)';
+        document.querySelector('.parent-window').style.boxShadow = '0 0 20px rgba(52, 152, 219, 0.8)';
+      }
+    });
+
+    item.addEventListener('mouseleave', function() {
+      // Reset về trạng thái ban đầu
+      const windows = document.querySelectorAll('.browser-window');
+      windows.forEach(win => {
+        win.style.transform = 'scale(1)';
+        win.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+      });
+    });
+  });
+</script>
+</body>
+</html>
