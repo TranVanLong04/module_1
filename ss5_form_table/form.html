@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+      h1{
+        text-align: center;
+      }
+      h2{
+        text-align: center;
+      }
+
+      form{
+        width: 50vh;
+        height: auto;
+      }
+
+    </style>
+</head>
+<body>
+    <h1>Cong thong tin sinh vien</h1>
+    <h2>Dang nhap he thong</h2>
+    <form  method="post">
+      <fieldset>
+        <input type="text" name="usrn" placeholder="uswrname"> <br>
+        <input type="password" name="pass" placeholder="password">
+        <input type="checkbox" name="ckbdtn">Da tot nghiep <br>
+        <input type="text" name="otp" placeholder="Nhap OTP">
+        <input type="reset" value="Gui lai">
+        <input type="submit" value="Dang nhap">
+      </fieldset>
+    </form>
+
+    <form action="/order" method="POST">
+        <h3>Phở Bò</h3>
+        <p>Giá: 50.000 VNĐ</p>
+
+        <!-- Đây là thông tin người dùng CHỈ THẤY nút Order, không thấy số bàn -->
+        <input type="hidden" name="table_number" value="5">
+        <input type="hidden" name="dish_id" value="pho_bo">
+        <input type="hidden" name="price" value="50000">
+
+        <!-- Đây là nút bấm mà người dùng NHÌN THẤY và CLICK -->
+        <button type="submit">Order Món Này</button>
+    </form>
+</body>
+</html>
