@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Market</title>
+  <style>
+    form{
+      font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+      font-size: 11px;
+    }
+    h1{
+      font-size: 22px;
+    }
+    select {
+      width: 50%;
+    }
+    li{
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+
+    }
+    li:hover{
+      background-color: bisque;
+    }
+
+  </style>
+</head>
+<body>
+<form>
+  <h1>Market Research Survey</h1>
+  <p>Please take a few moments to complete this satisfaction survey.</p>
+  <hr>
+
+  <ul style="list-style-type:none; padding:0;">
+    <li>
+      <label><b>What is your age range?</b></label><br>
+      <select>
+        <option>18 - 24</option>
+        <option>24 - 35</option>
+        <option>35 - 50</option>
+        <option>50+</option>
+      </select>
+    </li>
+
+    <li>
+      <label><b>What is your yearly income range?</b></label><br>
+      <select>
+        <option>$0 - $25.000</option>
+        <option>$25.001 - $50.000</option>
+        <option>$50.000 - $100.000</option>
+        <option>$100.000+ </option>
+      </select>
+    </li>
+
+    <li>
+      <label><b>Gender Identity</b></label><br>
+      <input type="radio" name="Gender" value="Male"> Male<br>
+      <input type="radio" name="Gender" value="Female"> Female<br>
+      <input type="radio" name="Gender" value="Nonbinary"> Nonbinary<br>
+      <input type="radio" name="Gender" value="Other"> Other<br>
+      <input type="text" style="width:150px; margin-left: 25px"><br>
+      <small style="margin-left: 25px">Maximum of <b>250</b> characters. Currently Used: <b>0</b> characters.</small>
+    </li>
+
+    <li>
+      <label><b>Which of the following products have you purchased in the last 2 months?</b></label><br>
+      <input type="checkbox" name="Product 1"> Product 1<br>
+      <input type="checkbox" name="Product 2"> Product 2<br>
+      <input type="checkbox" name="Product 3"> Product 3
+    </li>
+
+    <li>
+      <label><b>How often would you use our new product?</b></label><br>
+      <input type="radio" name="radio"> Daily<br>
+      <input type="radio" name="radio"> Weekly<br>
+      <input type="radio" name="radio"> Monthly
+    </li>
+
+    <li>
+      <label><b>What would you pay for the new product?</b></label><br>
+      $ <input type="text" style="width: 50px" readonly><b> .</b> <input type="text" style="width: 10px" readonly><br>
+      <label style="padding-left: 10px">Dollars</label> <label style="padding-left: 25px">Cents</label>
+    </li>
+  </ul>
+</form>
+</body>
+</html>
