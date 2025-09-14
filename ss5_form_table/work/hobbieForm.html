@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    form{
+      border: 20px solid aqua;
+      width: 50%;
+
+    }
+    h1{
+      margin: 5px;
+      text-align: center;
+      background-color: red;
+      color: white;
+    }
+    label{
+      color: #3498db;
+    }
+
+    table{
+      margin-top: 10px;
+    }
+
+    td{
+      color: red;
+    }
+    input{
+      border-top: 3px solid black;
+      border-left: 3px solid black;
+    }
+    #inpSub{
+      border-bottom: 3px solid black; border-right: 3px solid black;
+      border-left: none;
+      border-top: none;
+    }
+    #inpSub1{
+      border-bottom: 3px solid black; border-right: 3px solid black;
+      border-left: none;
+      border-top: none;
+    }
+  </style>
+</head>
+<body>
+    <form>
+      <h1>So thich cua ban</h1>
+      <label style="width: 100px; display: inline-block; text-align: right" >Ho va ten</label>
+      <input type="text" name="yourname"><br>
+      <label style="width: 100px; display: inline-block; text-align: right">Email</label>
+      <input type="email" name="email" size="15" style="margin-top: 10px"><br>
+      <table>
+        <tr>
+          <td rowspan="3" style="width: 100px; vertical-align: top; text-align: right; color: #3498db">So thich</td>
+          <td><input type="checkbox">The thao</td>
+          <td><input type="checkbox">Am nhac</td>
+          <td><input type="checkbox">Doc sach</td>
+        </tr>
+
+        <tr>
+          <td><input type="checkbox">Luot web</td>
+          <td><input type="checkbox">Choi game</td>
+          <td><input type="checkbox">Dien anh</td>
+        </tr>
+
+        <tr>
+          <td><input type="checkbox">Du lich</td>
+        </tr>
+      </table>
+      <input type="submit" value="Gui thong tin" style="margin-left: 100px;padding: 5px; margin-bottom: 5px;" id="inpSub">
+      <input type="reset" value="Nhap lai" style="padding: 5px; margin-bottom: 5px; " id="inpSub1">
+    </form>
+</body>
+</html>
