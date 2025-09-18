@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Area</title>
+</head>
+<body>
+    <p id="text1"></p>
+    <p id="text2"></p>
+    <p id="text3"></p>
+    <script>
+        inputwidth = prompt('Enter width');
+        inputheight = prompt('Enter height');
+        document.getElementById('text1').innerHTML = "Enter width: <br>" + inputwidth;
+        document.getElementById('text2').innerHTML = "Enter height: <br>" + inputheight;
+        var height = parseInt(inputheight);
+        var width = parseInt(inputwidth);
+        var area = width * height;
+        document.getElementById("text3").innerText = "Area = " + area;
+    </script>
+</body>
+</html>
