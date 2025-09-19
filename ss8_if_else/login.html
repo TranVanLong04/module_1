@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        var name = prompt("Nhap ten dang nhap: ");
+        if (name == "Admin") {
+            let password = prompt("Nhap ten mat khau: ");
+            if (password == "TheMaster") {
+                document.getElementById("result").innerHTML = "Welcome!";
+            } else if (password == null) {
+                document.getElementById("result").innerHTML = "Canceled";
+            } else {
+                document.getElementById("result").innerHTML = "Wrong Password!";
+            }
+        }
+        else if(name == null) {
+            document.getElementById("result").innerHTML = "Canceled!";
+            }
+        else {
+            document.getElementById("result").innerHTML = "Cancaled";
+        }
+    </script>
+</body>
+</html>
