@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen doi tien te</title>
+  <style>
+
+  </style>
+</head>
+<body>
+    <!--<form>
+      <label>Amount</label>
+      <label>From Currency</label>
+      <label>To Currency</label><br>
+      <input id="Amount">
+      <select id="FrCurrency">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+      </select>
+      <select id="ToCurrency">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+      </select>
+      <input type="button" value="Convent" id="Convent" onclick="Chuyen_doi_tien_te()">
+      <p id="result"></p>
+    </form> -->
+    <table>
+        <tr>
+          <th>Amount</th>
+          <th>From Currency</th>
+          <th>To Currency</th>
+        </tr>
+
+        <tr>
+          <td><input id="Amount"></td>
+          <td>
+            <select id="FrCurrency">
+              <option value="VND">VND</option>
+              <option value="USD">USD</option>
+            </select>
+          </td>
+          <td>
+            <select id="ToCurrency">
+              <option value="VND">VND</option>
+              <option value="USD">USD</option>
+            </select>
+          </td>
+          <td><input type="button" value="Convent" id="Convent" onclick="Chuyen_doi_tien_te()"></td>
+        </tr>
+    </table>
+    <p id="result"></p>
+
+    <script>
+
+      function Chuyen_doi_tien_te() {
+        var inputAmount = document.getElementById("Amount").value;
+        Amount = parseInt(inputAmount);
+        var FrCurrency = document.getElementById("FrCurrency").value;
+        var ToCurrency = document.getElementById("ToCurrency").value;
+        var ketqua;
+        if(FrCurrency == "USD" && ToCurrency == "VND"){
+            ketqua = (Amount * 23000) + "D";
+        }
+        else if(FrCurrency == "VND" && ToCurrency == "USD"){
+          ketqua = (Amount / 23000) + "USD";
+        }
+        else {
+          ketqua = "Vui long chon loai tien muon chuyen doi:";
+        }
+        document.getElementById("result").innerText = "Quy doi: " + ketqua;
+      }
+    </script>
+</body>
+</html>
