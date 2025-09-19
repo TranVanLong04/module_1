@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+      <tr>
+        <th rowspan="2"><input type="text" id="ip1"></th>
+        <th rowspan="2"><input type="text" id="ip2"></th>
+      </tr>
+
+      <tr>
+        <td><input type="button" id="phepcong" onclick="cong()" value="+"></td>
+        <td><input type="button" id="pheptru" onclick="tru()" value="-"></td>
+        <td><input type="button" id="phepnhan" onclick="nhan()" value="*"></td>
+        <td><input type="button" id="phepchia" onclick="chia()" value="/"></td>
+      </tr>
+    </table>
+    <p id="result"></p>
+    <script>
+      function cong() {
+        var ipnb1 = document.getElementById("ip1").value;
+        var ipnb2 = document.getElementById("ip2").value;
+        nb2 = parseInt(ipnb2);
+        nb1 = parseInt(ipnb1)
+        ketqua = nb1 + nb2;
+        document.getElementById("result").innerHTML = ketqua;
+      }
+      function tru() {
+        var ipnb1 = document.getElementById("ip1").value;
+        var ipnb2 = document.getElementById("ip2").value;
+        nb2 = parseInt(ipnb2);
+        nb1 = parseInt(ipnb1)
+        ketqua = nb1 - nb2
+        document.getElementById("result").innerHTML = ketqua;
+      }
+
+      function nhan() {
+        var ipnb1 = document.getElementById("ip1").value;
+        var ipnb2 = document.getElementById("ip2").value;
+        nb2 = parseInt(ipnb2);
+        nb1 = parseInt(ipnb1)
+        ketqua = nb1 * nb2
+        document.getElementById("result").innerHTML = ketqua;
+      }
+
+      function chia() {
+        var ipnb1 = document.getElementById("ip1").value;
+        var ipnb2 = document.getElementById("ip2").value;
+        nb2 = parseInt(ipnb2);
+        nb1 = parseInt(ipnb1)
+        ketqua = nb1 / nb2
+        document.getElementById("result").innerHTML = ketqua;
+      }
+
+    </script>
+</body>
+</html>
