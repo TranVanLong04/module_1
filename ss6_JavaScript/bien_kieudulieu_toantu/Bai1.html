@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<!-- Bài 1: Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học, và Sinh học. Sau đó hiển thị điểm trung bình và tổng của những điểm này.-->
+  <script>
+    inputvatLy = prompt('Nhap dime Vat Ly: ');
+    inputhoa = prompt('Nhap dime Hoa: ');
+    inputsinh = prompt('Nhap dime Sinh: ');
+    vatly = parseInt(inputvatLy);
+    hoa = parseInt(inputhoa);
+    sinh = parseInt(inputsinh);
+    sum = vatly + sinh + hoa;
+    tbc = (vatly + sinh + hoa) / 3;
+    tbc = tbc.toFixed(1);
+    alert("Trung binh cong = " + tbc)
+    alert("Trung binh cong = " + sum)
+  </script>
+</body>
+</html>
