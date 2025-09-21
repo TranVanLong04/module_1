@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onClick</title>
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg" style="width: 300px" id="img1">
+    <p>Click button to move right</p>
+    <button id="btn" onclick="moveRoght()">Click move Right</button>
+
+    <script>
+      let img = null;
+      img = document.getElementById("img1");
+      function init() {
+        img.style.position = "relative";
+        img.style.left = "0px";
+      }
+
+      function moveRoght() {
+        img.style.left = parseInt(img.style.left) + 10 + "px";
+      }
+      window.onload = init;
+    </script>
+</body>
+</html>
