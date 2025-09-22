@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<body>
+    <form>
+        <label>Nhap can nang (kg)</label>
+        <input type="text" id="ip1"><br>
+        <label>Nhap chieu cao (cm)</label>
+        <input type="text" id="ip2"><br>
+        <input type="button" onclick="tinhBMI()" value="kiem tra">
+        <p id="view"></p>
+    </form>
+
+    <script>
+
+
+        function tinhBMI() {
+            let ipwieght = document.getElementById('ip1').value;
+            let iphieght = document.getElementById('ip2').value;
+            wieght = parseFloat(ipwieght);
+            height = parseFloat(iphieght) / 100;
+            let result = wieght / (height * height);
+            if (result <= 18.5) {
+                document.getElementById('view').innerHTML = "Underweight";
+            }
+            else if(result >= 18.5 && result < 25.0) {
+                document.getElementById('view').innerHTML = "Normal";
+            }
+            else if(result >= 25.0 && result < 30.0) {
+                document.getElementById('view').innerHTML = "Overweight";
+            }
+            else {
+                document.getElementById('view').innerHTML = "Obese";
+            }
+        }
+    </script>
+</body>
+</html>
