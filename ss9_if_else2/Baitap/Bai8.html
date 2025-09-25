@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</title>
+</head>
+<body>
+    <script>
+        let tuoi = parseInt(prompt("nhap tuoi: "));
+        if (typeof tuoi != "number") {
+            document.write(`ban nhap sai du lieu dau vao`)
+        }
+        let kiemtra = (tuoi < 120 && tuoi > 0 ? `${tuoi} tuoi la tuoi cua 1 nguoi` : "Khong phai tuoi cua nguoi");
+        document.write(kiemtra);
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</title>
+</head>
+<body>
+    <script>
+      let a = parseInt(prompt("Nhap vao chieu dai canh a"));
+      let b = parseInt(prompt("Nhap vao chieu rong canh b"));
+      if (typeof a !== "number" || typeof b !== "number" || a <= 0 || b < 0) {
+        document.write("du lieu dau vao bi sai");
+      }
+      else{
+        let S = a**b;
+        document.write("Dien tich hinh vuong = " + S);
+      }
+    </script>
+</body>
+</html>

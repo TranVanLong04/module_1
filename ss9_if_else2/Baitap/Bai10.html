@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình tính giá điện.</title>
+</head>
+<body>
+    <script>
+      let soDienTieuThu = parseInt(prompt("Nhap so dien tieu thu: "));
+      let giaDien = parseInt(prompt("nhap gia dien: "));
+      if (typeof soDienTieuThu != "number" || soDienTieuThu <= 0) {
+        document.write(`ban nhap sai du lieu dau vao`)
+      }
+      else{
+        result = soDienTieuThu * giaDien;
+        document.write(`Gia dien ban dung la: `+result);
+      }
+    </script>
+</body>
+</html>

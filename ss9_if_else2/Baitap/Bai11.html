@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình tính thuế thu nhập cá nhân.</title>
+</head>
+<body>
+  <script>
+    let thuNhapNam = parseInt(prompt("nhap thua nhap hang nam cua ban: "));
+    if (typeof thuNhapNam !== "number") {
+      document.write(`Bạn nhập sai dữ liệu đầu vào`);
+    }
+    else if (thuNhapNam <= 0) {
+      document.write("Không có thuế thu nhập");
+    }
+    else {
+      if (thuNhapNam <= 60 ) {
+        document.write("Thuế thu nhập của bạn là 5%");
+      }
+      else if (thuNhapNam > 60 && thuNhapNam <= 120) {
+        document.write("Thuế thu nhập của bạn là 10%");
+      }
+      else if (thuNhapNam > 120 && thuNhapNam <= 216 ) {
+        document.write("Thuế thu nhập của bạn là 15%");
+      }
+      else if (thuNhapNam > 216 && thuNhapNam <= 384 ) {
+        document.write("Thuế thu nhập của bạn là 20%");
+      }
+      else if (thuNhapNam > 384 && thuNhapNam <= 624) {
+        document.write("Thuế thu nhập của bạn là 25%");
+      }
+      else if (thuNhapNam > 624 && thuNhapNam <= 960 ) {
+        document.write("Thuế thu nhập của bạn là 30%");
+      }
+      else if (thuNhapNam > 960) {
+        document.write("Thuế thu nhập của bạn là 35%");
+      }
+      else {
+        document.write("Không xác định được bậc thuế!");
+      }
+    }
+  </script>
+</body>
+</html>
