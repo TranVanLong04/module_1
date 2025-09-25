@@ -4,93 +4,85 @@
     <meta charset="UTF-8">
     <title>Puzzlegame</title>
     <style>
-       img{
+        img {
             width: 100%;
         }
     </style>
-
 </head>
 <body>
-    <table id="puzzlegame">
-        <tr >
-            <td><img src="dau1.jpg" id="dau" onclick="random_dau1()"></td>
-        </tr>
+<table id="puzzlegame">
+    <tr>
+        <td><img src="img/dau1.jpg" id="dau" onclick="random_dau1()"></td>
+    </tr>
+    <tr>
+        <td><img src="img/tran1.jpg" id="tran" onclick="random_tran2()"></td>
+    </tr>
+    <tr>
+        <td><img src="img/mat1.jpg" id="mat" onclick="random_mat3()"></td>
+    </tr>
+    <tr>
+        <td><img src="img/mieng1.jpg" id="mieng" onclick="random_mieng4()"></td>
+    </tr>
+    <tr>
+        <td><img src="img/tay1.jpg" id="tay" onclick="random_tay5()"></td>
+    </tr>
+</table>
 
-        <tr>
-            <td><img src="tran1.jpg" id="tran" onclick="random_tran2()"></td>
-        </tr>
+<script>
+    let ketqua1, ketqua2, ketqua3, ketqua4, ketqua5;
 
-        <tr>
-            <td><img src="mat1.jpg"  id="mat" onclick="random_mat3()"></td>
-        </tr>
+    function random_dau1() {
+        let img_dau = ["img/dau1.jpg","img/dau2.jpg","img/dau3.jpg"];
+        let randomIndex = Math.floor(Math.random() * img_dau.length);
+        document.getElementById("dau").src = img_dau[randomIndex];
+        ketqua1 = randomIndex;
+        checkAnimation();
+    }
 
-        <tr>
-            <td><img src="mieng1.jpg"  id="mieng" onclick="random_mieng4()"></td>
-        </tr>
+    function random_tran2() {
+        let img_tran = ["img/tran1.jpg","img/tran2.jpg","img/tran3.jpg"];
+        let randomIndex = Math.floor(Math.random() * img_tran.length);
+        document.getElementById("tran").src = img_tran[randomIndex];
+        ketqua2 = randomIndex;
+        checkAnimation();
+    }
 
-        <tr>
-            <td><img src="tay1.jpg"  id="tay" onclick="random_tay5()"></td>
-        </tr>
-    </table>
+    function random_mat3() {
+        let img_mat = ["img/mat1.jpg","img/mat2.jpg","img/mat3.jpg"];
+        let randomIndex = Math.floor(Math.random() * img_mat.length);
+        document.getElementById("mat").src = img_mat[randomIndex];
+        ketqua3 = randomIndex;
+        checkAnimation();
+    }
 
-    <script>
-        let ketqua1, ketqua2, ketqua3, ketqua4, ketqua5;
-        function random_dau1() {
-            let img_dau = ["dau1.jpg","dau2.jpg","dau3.jpg"];
-            let randomIndex = Math.floor(Math.random() * img_dau.length);
-            document.getElementById("dau").src = img_dau[randomIndex];
-            ketqua1 = randomIndex;
-            checkAnimation();
+    function random_mieng4() {
+        let img_mieng = ["img/mieng1.jpg","img/mieng2.jpg","img/mieng3.jpg"];
+        let randomIndex = Math.floor(Math.random() * img_mieng.length);
+        document.getElementById("mieng").src = img_mieng[randomIndex];
+        ketqua4 = randomIndex;
+        checkAnimation();
+    }
+
+    function random_tay5() {
+        let img_tay = ["img/tay1.jpg","img/tay2.jpg","img/tay3.jpg"];
+        let randomIndex = Math.floor(Math.random() * img_tay.length);
+        document.getElementById("tay").src = img_tay[randomIndex];
+        ketqua5 = randomIndex;
+        checkAnimation();
+    }
+
+    function checkAnimation() {
+        let table = document.getElementById("puzzlegame");
+        if (ketqua1 === 0 && ketqua2 === 0 && ketqua3 === 0 && ketqua4 === 0 && ketqua5 === 0) {
+            table.style.border = "5px solid red";
+        } else if (ketqua1 === 1 && ketqua2 === 1 && ketqua3 === 1 && ketqua4 === 1 && ketqua5 === 1) {
+            table.style.border = "5px solid red";
+        } else if (ketqua1 === 2 && ketqua2 === 2 && ketqua3 === 2 && ketqua4 === 2 && ketqua5 === 2) {
+            table.style.border = "5px solid red";
+        } else {
+
         }
-
-        function random_tran2() {
-            let img_tran = ["tran1.jpg","tran2.jpg","tran3.jpg"];
-            let randomIndex = Math.floor(Math.random() * img_tran.length);
-            document.getElementById("tran").src = img_tran[randomIndex];
-            ketqua2 = randomIndex;
-            checkAnimation();
-        }
-
-        function random_mat3() {
-            let img_mat = ["mat1.jpg","mat2.jpg","mat3.jpg"];
-            let randomIndex = Math.floor(Math.random() * img_mat.length);
-            document.getElementById("mat").src = img_mat[randomIndex];
-            ketqua3 = randomIndex;
-            checkAnimation();
-        }
-
-        function random_mieng4() {
-            let img_mieng = ["mieng1.jpg","mieng2.jpg","mieng3.jpg"];
-            let randomIndex = Math.floor(Math.random() * img_mieng.length);
-            document.getElementById("mieng").src = img_mieng[randomIndex];
-            ketqua4 = randomIndex;
-            checkAnimation();
-        }
-
-        function random_tay5() {
-            let img_tay = ["tay1.jpg","tay2.jpg","tay3.jpg"];
-            let randomIndex = Math.floor(Math.random() * img_tay.length);
-            document.getElementById("tay").src = img_tay[randomIndex];
-            ketqua5 = randomIndex;
-            checkAnimation();
-        }
-        function checkAnimation() {
-            let table = document.getElementById("puzzlegame");
-            if (ketqua1 === 0 && ketqua2 === 0 && ketqua3 === 0 && ketqua4 === 0 && ketqua5 === 0) {
-                table.body.style.border = "5px solid red";
-            }
-            else if (ketqua1 === 1 && ketqua2 === 1 && ketqua3 === 1 && ketqua4 === 1 && ketqua5 === 1) {
-                table.style.border = "5px solid red";
-            }
-            else if (ketqua1 === 2 && ketqua2 === 2 && ketqua3 === 2 && ketqua4 === 2 && ketqua5 === 2) {
-               table.style.border = "5px solid red";
-            }
-            else {
-
-            }
-        }
-
-
-    </script>
+    }
+</script>
 </body>
 </html>
