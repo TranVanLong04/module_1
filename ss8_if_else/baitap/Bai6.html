@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại cho một hộ gia đình dựa trên các thông số được cung cấp.
+      Phí thuê bao bắt buộc là 25 nghìn.
+      600 đồng cho mỗi gọi của 50 phút đầu tiên.
+      400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+      200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
+    </title>
+</head>
+<body>
+    <script>
+      let phiTB = parseInt(prompt("Phi thue bao hien co trong tai khoan"));
+      let phut_goi = parseInt(prompt("Phut goi cua ban"));
+      let phi_goi;
+      if (phiTB < 0 || phut_goi < 0) {
+        document.write("Phi thue bao khong du");
+      }
+      else {
+        if (phut_goi < 50) {
+          phi_goi = phut_goi * 600;
+          document.write(phi_goi);
+        }
+        else if (phut_goi > 50 && phut_goi <= 150) {
+          phi_goi = phut_goi * 400;
+          document.write(phi_goi);
+        }
+        else {
+          phi_goi = phut_goi  * 200;
+          document.write(phi_goi);
+        }
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp loại học lực của học sinh dựa trên:
+
+      Điểm bài kiểm tra.
+      Điểm thi giữa kỳ.
+      Điểm thi cuối kỳ.</title>
+</head>
+<body>
+    <script>
+      let diemKtra = parseFloat(prompt("nhap vao dieim kiem tra"));
+      diemKtra = diemKtra.toFixed(2);
+      let diemGki = parseFloat(prompt("nhap vao diem giua ki"));
+      diemGki = diemGki.toFixed(2);
+      let diemCki = parseFloat(prompt("nhap vao diem cuoi ki"));
+      diemCki = diemCki.toFixed(2);
+      if (diemKtra <0 || diemKtra > 10 || diemGki < 0 || diemGki > 10 || diemCki < 0 || diemCki > 10) {
+        document.write("Ban nhap sai du lieu!");
+      }
+      else {
+        let tbm = (diemKtra + diemGki + diemCki) / 3;
+        let result = (tbm >= 8 ? "Gioi" : tbm >= 6.5 ? "Kha" : tbm >= 5 ? "Trung binh" : "Yeu");
+        document.write(result);
+      }
+    </script>
+</body>
+</html>
