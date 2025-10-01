@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa của một số nguyên dương</title>
+</head>
+<body>
+    <script>
+      let n = parseInt(prompt("Nhap vao n: "));
+      let luuThua = 1;
+      for (let i = 1; i <= n; i++) {
+        luuThua *= i;
+      }
+      document.write("Luu thua cua" + ` ${n} = ` +  luuThua);
+    </script>
+</body>
+</html>

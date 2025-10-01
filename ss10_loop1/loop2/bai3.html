@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>n tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau</title>
+</head>
+<body>
+    <script>
+            //Bài này em đang lú, cần sp bởi mr Công!
+
+            for (let i = 0; i <= 4; i++) {
+              for (let j = 0; j <= i; j++) {
+                document.write(`*`);
+              }
+              document.write("<br>");
+            }
+            document.write("<br>");
+            for (let i = 0; i <= 4; i++) {
+              for (let j = 4; j >= i; j--) {
+                document.write(`*`);
+              }
+              document.write("<br>");
+            }
+
+
+            for (let i = 1; i <= 5; i++) {
+                // In khoảng trắng (n - i lần)
+                for (let j = 1; j <= 5 - i; j++) {
+                    document.write("&nbsp;&nbsp;");
+                }
+                // In dấu * (i lần)
+                for (let k = 1; k <= i; k++) {
+                    document.write("*");
+                }
+                // Xuống dòng
+                document.write("<br>");
+            }
+            for (let i = 5; i >= 1; i--) {
+                // In khoảng trắng (n - i lần)
+                for (let j = 1; j <= 5 - i; j++) {
+                    document.write("&nbsp;&nbsp;");
+                }
+                // In dấu * (i lần)
+                for (let k = 1; k <= i; k++) {
+                    document.write("*");
+                }
+                // Xuống dòng
+                document.write("<br>");
+            }
+
+
+
+    </script>
+</body>
+</html>
