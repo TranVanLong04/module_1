@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô tả ứng dụng: Khi người dùng nhấn vào button “Chơi”:
+
+      Ứng dụng hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào
+      Ứng dụng chọn ra số ngẫu nhiên trong khoảng mà ngườI dùng chọn
+      Ứng dụng hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán
+      Ứng dụng lấy kết quả và so sánh với giá trị ngẫu nhiên.
+      Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi
+      Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua và cho phép người dùng lựa chọn lại.</title>
+</head>
+<body>
+  <button id="btn">Bat dau</button>
+  <p id="demo"></p>
+    <script>
+      function batDau() {
+        let numberPlayer;
+        let numberDuDoan;
+        let cnt = 0;
+        do {
+          numberPlayer = parseInt(prompt("Nhập vào muốn đoán trong khoảng nào :"));
+          let numberRD = Math.floor(Math.random() * (numberPlayer+1));
+          alert("So random = " + numberRD)
+          numberDuDoan = parseInt(prompt("Nhập vào so muốn đoán: "));
+          if (numberDuDoan > numberRD) {
+            alert(numberDuDoan + "lon hon so ngau nhien");
+          }
+          else if (numberDuDoan < numberRD) {
+            alert(numberDuDoan + "be hon so ngau nhien");
+          }
+          else if (numberDuDoan == numberRD) {
+            alert("Chúc mừng so ban du doan bang voi so ngau nhien");
+            break;
+          }
+          cnt++;
+        }
+        while (cnt < 3)
+        alert("Ban da het so lan doan");
+        document.write("Ban da het so lan doan");
+      }
+      document.getElementById("btn").onclick = batDau;
+    </script>
+</body>
+</html>
