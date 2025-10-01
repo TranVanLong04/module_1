@@ -8,11 +8,17 @@
     <script>
       let number = parseInt(prompt("Nhap vao so can tim trong mang: "));
       let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      let ok = 0;
       for (let i = 0; i < arr.length; i++) {
         if(arr[i] == number) {
-          document.write(number + "co trong mang")
+          ok++;
         }
-        document.write(number + "khong co trong mang")
+      }
+      if (ok > 0) {
+        document.write(number + " co trong mang");
+      }
+      else{
+        document.write(number + " khong co trong mang");
       }
     </script>
 </body>
