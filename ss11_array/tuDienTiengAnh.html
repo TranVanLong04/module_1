@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu dien Tieng Anh</title>
+</head>
+<body>
+      <input type="text" id="ipText">
+      <p id="demo"></p>
+      <input type="submit" value="Tra" onclick="toVietNamese()">
+    <script>
+      const listTA = [
+        {
+          english: "hello",
+          vietnamese: "xin chao"
+        },
+
+        {
+          english: "yes",
+          vietnamese: "co"
+        },
+
+        {
+          english: "no",
+          vietnamese: "khong"
+        },
+
+        {
+          english: "book",
+          vietnamese: "sach"
+        }
+      ]
+      let luuChk = ""; // biến lưu lại xem có từ cần tìm trong mảng không
+      function toVietNamese() {
+        listTA.map(function (tiengAnh) {
+          let input = document.getElementById('ipText').value;
+          input = input.toLowerCase();
+          if (tiengAnh.english == input) {
+            luuChk = tiengAnh.vietnamese;
+            document.getElementById("demo").innerHTML = tiengAnh.vietnamese;
+          }
+        })
+      }
+    </script>
+</body>
+</html>
