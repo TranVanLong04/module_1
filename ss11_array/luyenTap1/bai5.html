@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình đếm số nguyên âm trong một mảng.</title>
+</head>
+<body>
+    <script>
+      let n = parseInt(prompt("Nhap vao so phan tu mang: "))
+      let sna = 0;
+      let arr = [];
+      for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt(`Nhap vao phan thu ${arr[i]} phan tu mang: `));
+      }
+
+      for (let i = 0; i < n; i++) {
+          if(arr[i] < 0) {
+            sna++;
+          }
+      }
+      console.log(arr);
+      console.log(sna);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. Nhập hoặc tạo một phần tử số nguyên V.
+      Chương trình kiểm tra xem V có thuộc mảng đã cho không.
+      Nếu V thuộc mảng, xóa V khỏi mảng (dịch các phần tử bên phải V sang vị trí của V và gán 0 cho phần tử cuối cùng của mảng).
+    </title>
+</head>
+<body>
+    <script>
+      let n = parseInt(prompt("Nhap vao so phan tu mang: "))
+
+      let arr = [];
+      let check;
+      for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt(`Nhap vao phan thu ${arr[i]} phan tu mang: `));
+      }
+
+      let V = parseInt(prompt("Nhap vao so nguyen V: "))
+      for (let i = 0; i < n; i++) {
+        if (arr[i] == V) {
+          check = true;
+          break;
+        }
+        check = false;
+      }
+
+      if (check == true) {
+        console.log(V + " is in the array");
+      }
+      else {
+        console.log(V + "  is not in the array");
+      }
+      console.log(arr);
+      let timViTriV = arr.indexOf(V, 0);
+      arr.splice(timViTriV, 1);
+      arr.push(0);
+      console.log(arr);
+    </script>
+</body>
+</html>

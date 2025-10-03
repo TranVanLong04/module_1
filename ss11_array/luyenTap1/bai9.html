@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo hoặc nhập vào hai mảng số nguyên gồm 10 phần tử (gọi là mảng a và b).
+
+      Tạo mảng c gồm 20 phần tử.
+      Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c.
+      Hiển thị mảng c.</title>
+</head>
+<body>
+    <script>
+      let n = parseInt(prompt("Nhap vao so phan tu mang: "))
+      let arr1 = [];
+      let arr2 = [];
+      let c = parseInt(prompt("Nhap vao so phan tu mang c: "))
+
+      for (let i = 0; i < n; i++) {
+        arr1[i] = parseInt(prompt(`Nhap vao phan thu ${arr1[i]} phan tu mang: `));
+        arr2[i] = parseInt(prompt(`Nhap vao phan thu ${arr2[i]} phan tu mang: `));
+      }
+
+      console.log(arr1);
+      console.log(arr2);
+      let arr3 = arr1.concat(arr2);
+      console.log(arr3);
+    </script>
+</body>
+</html>

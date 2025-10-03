@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử.
+        Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị mảng đã được sắp xếp.</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhap vao so phan tu mang: "))
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt(`Nhap vao phan thu ${arr[i]} phan tu mang: `));
+        }
+        let arr1 = arr;
+        console.log(arr);
+        console.log("Mang sau khi sap xep giam dan");
+        console.log(arr.sort((a, b) => b - a));
+
+        console.log("Mang sau khi dao nguoc");
+        console.log(arr1.reverse());
+    </script>
+</body>
+</html>

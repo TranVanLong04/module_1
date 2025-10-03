@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo một mảng số nguyên. Hiển thị giá trị lớn nhất trong mảng đó.
+      In ra giá trị trung bình của các phần tử trong mảng.</title>
+</head>
+<body>
+    <script>
+      let n = parseInt(prompt("Nhap vao so phan tu mang: "))
+
+      let arr = [];
+      for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt(`Nhap vao phan thu ${arr[i]} phan tu mang: `));
+      }
+      let max = arr[0];
+      for (let i = 0; i < n; i++) {
+        if(arr[i] > max) {
+          max = arr[i];
+        }
+      }
+      let sum = 0;
+      for (let i = 0; i < n; i++) {
+        sum += arr[i];
+      }
+      let tbc =  sum / n;
+
+      console.log(arr);
+      console.log(max);
+      console.log(tbc);
+    </script>
+</body>
+</html>
