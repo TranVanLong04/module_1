@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự '-' trong mảng và thay thế chúng bằng ký tự '_'.</title>
+</head>
+<body>
+    <script>
+      let arr = ['a', 'b', '-', 'd', '-', 'f'];
+      for (let i = 0; i < arr.length; i++) {
+        let viTri = arr.indexOf('-', 0)
+        if (viTri == -1) {
+          //vì sau 2 lần lặp đầu đã duyệt hết các phần tử trong ar = "-" rồi nên các lần lặp arr[i] tiếp theo sẽ trả về indexOf(-1, 1, '_')
+          //indexOf trả về -1 khi không tìm thấy.
+          break;
+        }
+        arr.splice(viTri, 1, '_')
+      }
+
+      console.log(arr);
+
+    </script>
+</body>
+</html>

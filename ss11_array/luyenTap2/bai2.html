@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+      Bài 2:
+      Viết chương trình in các ký tự trong một mảng theo thứ tự đảo ngược.
+
+      Ví dụ:
+      Với mảng [ 'c', 's', 'c', '2', '6', '1' ], sau khi đảo ngược sẽ là: "162csc".</title>
+</head>
+<body>
+    <script>
+      let arr = [ 'c', 's', 'c', '2', '6', '1' ];
+      let arrNumber = [];
+      let arrText = [];
+      for (let i = 0; i < arr.length; i++) {
+          if(isNaN(arr[i])) {
+            arrText.push(arr[i]);
+          }
+          else {
+            arrNumber.push(arr[i]);
+          }
+      }
+
+      console.log((arrNumber.concat(arrText)).join(""));
+
+    </script>
+</body>
+</html>

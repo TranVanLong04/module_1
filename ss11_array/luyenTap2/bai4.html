@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4:
+      Viết chương trình đếm số từ trong một chuỗi.</title>
+</head>
+<body>
+    <script>
+      let str = "Tran Van Long";
+      let cnt = 1;// lưu ý ở đây vì 2 khoang trắng sẽ có 3 từ, số từ sẽ bằng số khoảng trắng cộng 1
+      str = str.trim();
+      for (let i = 0; i < str.length; i++) {
+        if (str[i] == " ") {
+          cnt++;
+        }
+      }
+      console.log(cnt);
+    </script>
+</body>
+</html>
