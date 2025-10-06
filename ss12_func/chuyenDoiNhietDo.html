@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+      <p>
+        <label>Fahrenheit</label>
+        <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+               oninput="temperatureConverter(this.value)"
+               onchange="temperatureConverter(this.value)">
+      </p>  <!-- oninput: chạy hàm ngay khi người dùng nhập ký tự (gõ, xóa, dán, …)
+      onchange: chạy khi người dùng rời khỏi ô input sau khi thay đổi giá trị. -->
+      <p>Celsius: <span id="outputCelsius"></span></p>
+
+      <script>
+        function temperatureConverter(valNum) {
+          valNum = parseFloat(valNum);
+          let lamTron = (valNum-32) / 1.8
+          document.getElementById("outputCelsius").innerHTML = lamTron.toFixed(3)
+        }
+      </script>
+</body>
+</html>
