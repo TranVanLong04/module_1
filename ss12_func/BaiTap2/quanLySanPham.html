@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+</head>
+<body>
+    <form>
+        <b>Add New Product:</b><br>
+        <input type = "text" placeholder="New Product" id="inputProduct">
+        <input type = "button" value="Add" onclick = addProduct()  style='background-color: mediumspringgreen'><br>
+
+    </form>
+    <b>Display All Product</b>
+    <p>Product Name</p>
+    <p id="view1"></p>
+    <p id="view2"></p>
+    <script>
+        //addItem(), updateUser(), deleteProduct(), printList()
+        // let soLuongAdd = +prompt("Nhap vao so luong san pham muon them: ")
+        function showProduct() {
+            sout = "<table  width='300' cellspacing='0' cellpadding='3' style=''>"
+            for (let i = 0; i < product.length; i++) {
+                sout += "<tr>";
+                for (let j = 0; j < 3; j++) {
+                    sout += "<td>";
+                    if(j == 0){
+                        sout += product[i];
+                    }
+                    if(j == 1){
+                        sout += "<button id='editProduct' onclick='editProduct("+ i + ")' style='background-color: mediumspringgreen'>Edit</button>";
+                    }
+                    else if(j == 2){
+                        sout += "<button id='delProduct' onclick='delProduct("+ i + ") ' style='background-color: mediumspringgreen'>Delete</button>";
+                    }
+                    sout += "</td>";
+                }
+                sout+= "</tr>"
+            }
+            document.getElementById("view1").innerHTML = sout;
+            document.getElementById("view2").innerHTML = "<span style='color: red;'>" + product.length + " product" + "</span>";
+        }
+
+        function addProduct() {
+            let nameProduct = document.getElementById("inputProduct").value;
+            product[product.length] = nameProduct;
+            showProduct();
+        }
+
+        function editProduct(index) {
+            let changeValue = prompt("Nhap ten san pham moi: ")
+            product[index] = changeValue;
+            showProduct();
+        }
+
+        function delProduct(index) {
+            let result = confirm("Ban co muon xoa?")
+            if (result) {
+                for (let i = 0; i < product.length; i++) {
+                    if (product[i] == product[index]) {
+                        product[i] = product[i + 1];
+                    }
+                }
+                product.length = product.length - 1;
+            }
+            showProduct();
+        }
+        let sout;
+        let product = [
+            "Sony Xperia",
+            "Samsung Galaxy",
+            "Nokia 6",
+            "Xiaomi Redmi Note 4",
+            "Apple iPhone 6S",
+            "Xiaomi Mi 5s Plus",
+            "Apple iPhone 8 Plus",
+            "Fujitsu F-04E",
+            "Oppo A71"
+        ];
+        showProduct()
+    </script>
+</body>
+</html>
