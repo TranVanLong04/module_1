@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+    <script>
+        function daoNguoc(arra, arrb) {
+            for(let i = arra.length - 1; i >= 0; i--) {
+                arrb[(arra.length - 1) - i] = arra[i];
+            }
+            return arrb
+        }
+        let arrDaoNguoc = [];
+        let arr1 = [1,2,3,4,5,6,7];
+        document.write("Mảng trước khi đảo ngược: " + arr1 + "<br>")
+        document.write("Mảng đảo ngược là: " + daoNguoc(arr1, arrDaoNguoc));
+    </script>
+</body>
+</html>

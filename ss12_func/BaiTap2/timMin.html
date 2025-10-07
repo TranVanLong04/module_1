@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số nguyên nhỏ nhất</title>
+</head>
+<body>
+    <script>
+      function timMin(arr) {
+        let min = arr[0];
+        for(let i = 0; i < arr.length; i++) {
+          if(arr[i] < min) {
+            min = arr[i];
+          }
+        }
+        return min;
+      }
+
+      let arr1 = [1, 3, 2, 6, 8, 5, 10]
+      document.write("Gia trị nhỏ nhát là: " + timMin(arr1));
+    </script>
+</body>
+</html>

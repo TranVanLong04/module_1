@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ký tự trong mảng</title>
+</head>
+<body>
+    <script>
+      function chkKyTu(arr, c) {
+        let chk = false;
+        for(let i = 0; i < arr.length; i++) {
+          if(arr[i] == c) {
+              return chk = true;
+              break;
+          }
+        }
+        return chk;
+      }
+
+      function chkSoLanLap(arr, c) {
+        let cnt = 0;
+        for(let i = 0; i < arr.length; i++) {
+          if(arr[i] == c) {
+            cnt ++;
+          }
+        }
+        return cnt;
+      }
+
+      let arr = ['c', 'l', 1, 't', 0, 't']
+      let check = prompt("Nhập vào kí tự cần kiểm tra: ");
+      document.write(chkKyTu(arr, check))
+      document.write(chkSoLanLap(arr, check))
+    </script>
+</body>
+</html>
