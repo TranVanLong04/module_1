@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm sao</title>
+</head>
+<body>
+<p id = "view"></p>
+    <script>
+        let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let arr2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        function checkStar(star) {
+            for (let i = 1; i < arr1.length; i++) {
+                if(inputStar == arr1[i]) {
+                    for(let j = 0; j < arr2[i].length; j++) {
+                        if(i == j) {
+                            return `Tìm thấy chòm sao tương ứng là ${arr2[j]}`;
+                        }
+                    }
+                }
+                return "Không tìm thấy chòm sao tương ứng!"
+            }
+        }
+
+        let inputStar = prompt("Nhâp vào star cần tìm: ");
+        document.getElementById("view").innerHTML = checkStar(inputStar);
+    </script>
+</body>
+</html>
