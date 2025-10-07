@@ -1,0 +1,25 @@
+cơ chế hoisting là cơ chế đặc biệt của biến var: dù khai báo biến var đầu hay cuối thì ta vẫn có thêr sử dụng được bất kì vị trí
+nào dù trước hay sau khi khởi tạo, nếu dùng biến tước dingf lệnh khởi tạo biến thì sữ thông báo undefined
+cơ chế hoisting đối với let và const thì khác 1 chút là vẫn dùng được tên biến nhưng khi in ra giá trị sẽ là chưa khởi tai=ọ
+
+                                        ----------------------------------------------
+                                                        QUY TĂC ĐẶT TÊN
+Đặt tên biến theo kiẻu con lạc đà: hoTen, userName,...
+Đặt tên biến theo định dạng: HoTen,..
+Dặt tên theo cú pháo con rắn: ho_ten,...
+
+tên biến và tên hàm thì đặt theo kiểu con lạc đà và snake:
+Hằng số thì đặt full hoa: HANG_SO,..
+Tên lớp thì đặt theo danh từ hoạcư cụm danh từ và tính từ: userInfor,...
+Tên hàm bắt đầu bằng động từ: getName, setName,...
+
+                                         -----------------------------------------------
+Đối số: là các gúa trị được truyền khi gọi hàm. vd: sayHello("hello", 5) vậy hello và 5 goi lag đối số
+Tham số: là các biến được truyền vào. vd: function add(x, y), let result = add(3, 7) => 3, 7 là ĐỐI SỐ, x, y là Tham số
+THAM SỐ: chỉ dùng với các biến kiểu nguyên thủy, string, number, float, double, undefined,  boolean
+vd ta có: a = 5; a= a; thì thực chất b chỉ đang coppy giá trị của a thôi và không coppy địa chỉ vùng nhớ của a
+THAM TRỊ: chỉ dùng với kiểu ARRAY và OBJECT, FUNCTION ta có:
+vd:     let obj1 = { name: "Long" }; // obj1 có địa chỉ là 1B2A
+        let obj2 = obj1; //obj2 coppy luôn đja chỉ của obj1 => obj2 = obj1 = 1B2A
+        obj2.name = "ChatGPT";
+       => cả obj1. name và obj2.name sẽ bằng "ChatGPT" luôn vì name cả 2 đều trỏ tới cùng 1 vùng nhớ trong RAM nên sẽ xthay đổi cả 2

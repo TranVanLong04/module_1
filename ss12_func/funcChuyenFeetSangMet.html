@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <p id="view1"></p>
+    <p id="view2"></p>
+    <script>
+        function feetToMet() {
+          let inputFeet = parseFloat(prompt("Nhập vào số Feet cần chuyển đổi: "))
+          let resuilt = 0.305 * inputFeet;
+          return "Số Met sau chuyển đổi là: " + resuilt.toFixed(3);
+        }
+
+        function metToFeet() {
+          let iputMet = parseFloat(prompt("Nhập vào số Met cần chuyển đổi: "))
+          let resuilt = 3.279 * iputMet;
+          return "Số Feet sau chuyển đổi là: " + resuilt.toFixed(3);
+        }
+
+        document.getElementById("view1").innerHTML = feetToMet();
+        document.getElementById("view2").innerHTML = metToFeet();
+    </script>
 </body>
 </html>
