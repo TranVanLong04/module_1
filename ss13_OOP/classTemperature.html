@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Temperature</title>
+</head>
+<body>
+    <script>
+        let myTemperature = function (nhietDo) {
+          this.nhietDo = nhietDo;
+
+
+          this.toFahrenheit = function () {
+            if (this.nhietDo < -273) {
+              return "Nhiet do qua thap!"
+            }
+            else {
+              return this.nhietDo * (9/5) + 32;
+            }
+          }
+
+          this.toKelvin = function () {
+            return this.nhietDo + 273.15;
+          }
+        }
+
+        let temperature = new myTemperature(25);
+        console.log(temperature.toFahrenheit());
+        console.log(temperature.toKelvin().toFixed(1));
+    </script>
+</body>
+</html>
