@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Date</title>
+</head>
+<body>
+    <script>
+      let MyDate = function(day, month, year) {
+          this.day = day;
+          this.month = month;
+          this.year = year;
+
+          this.getDate =  function(day) {
+            return this.day;
+          }
+
+          this.getMonth =  function(month) {
+            return this.month;
+          }
+
+          this.getYear =  function(year) {
+            return this.year;
+          }
+
+          this.setDay =  function(day) {
+            this.day = day;
+          }
+
+          this.setMonth = function (month) {
+            this.month = month;
+          }
+
+          this.setYear = function(year) {
+            this.year = year;
+          }
+
+          this.setDate = function(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+          }
+
+          this.toString = function(){
+            return this.day + "/" + this.month + "/" + this.year;
+          }
+      }
+
+      let date = new MyDate(13, 11, 2004);
+      console.log(date.getDate())
+      console.log(date.getMonth())
+      console.log(date.getYear())
+      date.setDay(30)
+      console.log(date.getDate())
+      date.setMonth(10)
+      console.log(date.getMonth())
+      date.setYear(1977)
+      console.log(date.getYear())
+      console.log(date.toString())
+      date.setDate(13,11,2004)
+      console.log(date.toString())
+    </script>
+</body>
+</html>
